@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студена Geek Brains</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		
+		var score = 0;
+
+		function checkUserAnswer(inputId, answer) {
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for(i=0; i<answer.length; i++) {
+				if(userAnswer == answer[i]){
+					score++;
+					break;
+				}
+			}
+		}
+
+
+		function checkAnswers() {
+			checkUserAnswer("userAnswer1", ["сон", "сновидения"]);
+			checkUserAnswer("userAnswer2", ["морской", "укус акулы"]);
+			checkUserAnswer("userAnswer3", ["шахматный", "морской"]);
+
+			alert("Вы дали " +score+ " правильных ответов");
+
+
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="#">Загадки</a>
+		<a href="guess.html">Угадайка</a>
+	</div>
+
+<div class="contentWrap">
+	<div class="content">
+		<div class="center">
+
+			<h1>Игра в загадки</h1>
+
+			<div class="box">
+				
+			<p>Что можно увидеть с закрытыми глазами?</p>
+			<input type="text" id="userAnswer1">
+
+			<p>Какой болезнью никто не болеет на суше?</p>
+			<input type="text" id="userAnswer2">
+
+			<p>Какой конь не ест овса?</p>
+			<input type="text" id="userAnswer3">			
+
+			<br>
+			<a href="#" onClick="checkAnswers();">Ответить</a>
+
+			</div>
+
+
+</div>
+
+<div class="footer">
+<p>Copyright &copy; Alexey Sekatskiy</p>
+</div>
+
+</body>
+</html>
